@@ -48,7 +48,7 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
 app.use(helmet());
 app.use(xss());
 app.use(mongoSanitize());
@@ -82,9 +82,9 @@ start();
 
 const io = new Server(server, {
   pingTimeout: 60000,
-  cors: {
-    origin: "*",
-  },
+//   cors: {
+//     origin: "*",
+//   },
 });
 
 io.on("connection", (socket) => {
